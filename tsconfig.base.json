@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@iamanderson/app-config": ["libs/app-config/idex.ts"],
+      "@iamanderson/shared-providers": ["libs/shared-providers/src/index.ts"],
       "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },
