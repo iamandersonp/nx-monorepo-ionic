@@ -3,7 +3,7 @@
 
 git stash -q --keep-index
 
-find {app,libs} -name .DS_Store -exec rm {} \; && nx format:write --all
+find {app,libs} -name .DS_Store -exec rm {} \; && nx format:write --all && npx nx affected --target=lint  && npx nx affected --target=test
 
 status=$?
 
