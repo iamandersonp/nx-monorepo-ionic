@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+
+git stash -q --keep-index
+
+find src/ -name .DS_Store -exec rm {} \; && nx format:write --all
+
+status=$?
+
+git stash pop -q
+
+exit $status
