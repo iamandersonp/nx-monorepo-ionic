@@ -1,3 +1,5 @@
+import { AppConfig } from '@iamanderson/app-config';
+
 /**
  * @ignore
  */
@@ -9,7 +11,7 @@ export const baseUrl = 'https://wbetest.bde.es/vit_web/vit';
  * @ignore
  * @type {object}
  */
-export const environment = {
+export const environment: AppConfig = {
   production: true,
   timeOut: 10000,
   minInterval: 30000,

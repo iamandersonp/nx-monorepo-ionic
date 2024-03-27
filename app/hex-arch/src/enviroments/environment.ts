@@ -1,21 +1,9 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-export interface AppConfig {
-  production: boolean;
-  timeOut: number;
-  minInterval: number;
-  showLogs: boolean;
-  defaultLanguage: string;
-  languages: string[];
-  dbVersion: number;
-  logLevel: number;
-  baseUrl: string;
-  storeKeys: {
-    DB_VERSION: string;
-    USER_LANGUAGE: string;
-  };
-}
+
+import { AppConfig } from '@iamanderson/app-config';
+
 /**
  * @ignore
  */
