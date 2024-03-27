@@ -44,7 +44,21 @@ describe('LoggerService', () => {
     it('should call debug with log level 0', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 0 });
+        .mockReturnValue({
+          logLevel: 0,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'debug');
       service.debug('test');
       expect(spy).toHaveBeenCalled();
@@ -53,7 +67,21 @@ describe('LoggerService', () => {
     it('should call debug with log level 1', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 0 });
+        .mockReturnValue({
+          logLevel: 0,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'debug');
       service.debug('test');
       expect(spy).toHaveBeenCalled();
@@ -64,7 +92,21 @@ describe('LoggerService', () => {
     it('should call Info with log level 0', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 1 });
+        .mockReturnValue({
+          logLevel: 1,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'info');
       service.info('test');
       expect(spy).toHaveBeenCalled();
@@ -73,7 +115,21 @@ describe('LoggerService', () => {
     it('should call debug with log level 1', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 1 });
+        .mockReturnValue({
+          logLevel: 1,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'info');
       service.info('test');
       expect(spy).toHaveBeenCalled();
@@ -84,7 +140,21 @@ describe('LoggerService', () => {
     it('should call Warning with log level 0', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 2 });
+        .mockReturnValue({
+          logLevel: 2,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'warning');
       service.warning('test');
       expect(spy).toHaveBeenCalled();
@@ -93,7 +163,21 @@ describe('LoggerService', () => {
     it('should call Warning with log level 1', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 2 });
+        .mockReturnValue({
+          logLevel: 2,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'warning');
       service.warning('test');
       expect(spy).toHaveBeenCalled();
@@ -104,7 +188,21 @@ describe('LoggerService', () => {
     it('should call Error with log level 0', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 3 });
+        .mockReturnValue({
+          logLevel: 3,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'error');
       service.error('test');
       expect(spy).toHaveBeenCalled();
@@ -113,7 +211,21 @@ describe('LoggerService', () => {
     it('should call debug with log level 1', () => {
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
-        .mockReturnValue({ logLevel: 3 });
+        .mockReturnValue({
+          logLevel: 3,
+          dbVersion: 1,
+          storeKeys: {
+            DB_VERSION: '',
+            USER_LANGUAGE: ''
+          },
+          production: false,
+          timeOut: 0,
+          minInterval: 0,
+          showLogs: false,
+          defaultLanguage: '',
+          languages: [],
+          baseUrl: ''
+        });
       const spy = jest.spyOn(service, 'error');
       service.error('test');
       expect(spy).toHaveBeenCalled();

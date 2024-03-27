@@ -50,10 +50,10 @@ export abstract class StorageAdapter {
    *
    * @abstract
    * @param {string} key - the key to remove
-   * @return {*}  {Promise<void>}
+   * @return {*}  { Promise<string>}
    * @memberof StorageAdapter
    */
-  abstract remove(key: string): Promise<void>;
+  abstract remove(key: string): Promise<string>;
 
   /**
    * Method to clear the storage

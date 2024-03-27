@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { LoggerAdapter } from '../adapters/logger-adapter';
-import { APP_CONFIG } from '@iamanderson/app-config';
+import { APP_CONFIG, AppConfig } from '@iamanderson/app-config';
 
 export enum LogLevel {
   DEBUG = 0,
@@ -9,9 +9,6 @@ export enum LogLevel {
   ERROR = 3
 }
 
-export interface AppConfig {
-  logLevel: number;
-}
 /**
  * Utility used to pretty format the logs in the console
  *
