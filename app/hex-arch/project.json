@@ -36,8 +36,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "app/hex-arch/src/environments/environment.ts",
-              "with": "app/hex-arch/src/environments/environment.prod.ts"
+              "replace": "app/hex-arch/src/enviroments/environment.ts",
+              "with": "app/hex-arch/src/enviroments/environment.prod.ts"
             }
           ],
           "budgets": [
