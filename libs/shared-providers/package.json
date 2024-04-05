@@ -1,0 +1,13 @@
+{
+  "name": "@iamanderson/shared-providers",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.1.0",
+    "@angular/core": "^17.1.0",
+    "@iamanderson/app-config": "^0.0.1",
+    "@ionic/storage-angular": "^4.0.0",
+    "rxjs": "~7.8.0"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}
