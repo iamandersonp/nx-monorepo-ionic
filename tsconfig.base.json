@@ -23,6 +23,9 @@
       "@iamanderson/shared-providers/logger": [
         "libs/shared-providers/logger/src/index.ts"
       ],
+      "@iamanderson/shared-providers/storage": [
+        "libs/shared-providers/storage/src/index.ts"
+      ],
       "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },

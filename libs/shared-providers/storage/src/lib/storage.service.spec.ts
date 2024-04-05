@@ -4,8 +4,20 @@ import { Storage } from '@ionic/storage-angular';
 
 import { StorageService } from './storage.service';
 
-import { storage } from '../mocks/storage.service.mock';
 import { APP_CONFIG, AppConfig } from '@iamanderson/app-config';
+
+/**
+ *  Mock for StorageService
+ */
+export const storage = {
+  create: jest.fn(),
+  defineDriver: jest.fn(),
+  set: jest.fn(),
+  get: jest.fn(),
+  remove: jest.fn(),
+  clear: jest.fn(),
+  storeData: jest.fn()
+};
 
 /**
  * Mock for LoggerService
