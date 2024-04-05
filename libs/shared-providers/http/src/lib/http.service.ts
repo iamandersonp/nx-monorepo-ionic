@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { LoggerAdapter } from '@iamanderson/shared-providers/logger';
 import { catchError } from 'rxjs/operators';
-import { HttpAdapter } from '../adapters/http-adapter';
+import { HttpAdapter } from './http-adapter';
 
 /**
  * Provider to handle generic http calls

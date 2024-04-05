@@ -4,7 +4,14 @@ import { HttpService } from './http.service';
 import { LoggerAdapter } from '@iamanderson/shared-providers/logger';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
-import { mockHttpService } from '../mocks/http.service.mock';
+
+import { of } from 'rxjs';
+
+export const mockHttpService = {
+  get: jest.fn().mockImplementation(() => of(true)),
+  put: jest.fn().mockImplementation(() => of(true)),
+  post: jest.fn().mockImplementation(() => of(true))
+};
 
 /**
  * Mock for LoggerService
