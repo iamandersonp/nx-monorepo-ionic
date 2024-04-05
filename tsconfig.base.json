@@ -17,6 +17,9 @@
     "paths": {
       "@iamanderson/app-config": ["libs/app-config/src/index.ts"],
       "@iamanderson/shared-providers": ["libs/shared-providers/src/index.ts"],
+      "@iamanderson/shared-providers/logger": [
+        "libs/shared-providers/logger/src/index.ts"
+      ],
       "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },

@@ -2,7 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
-import { LoggerAdapter } from '../adapters/logger-adapter';
+import { LoggerAdapter } from '@iamanderson/shared-providers/logger';
 import { catchError } from 'rxjs/operators';
 import { HttpAdapter } from '../adapters/http-adapter';
 

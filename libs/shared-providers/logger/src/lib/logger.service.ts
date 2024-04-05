@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { LoggerAdapter } from '../adapters/logger-adapter';
+import { LoggerAdapter } from './logger-adapter';
 import { APP_CONFIG, AppConfig } from '@iamanderson/app-config';
 
 export enum LogLevel {

@@ -1,11 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 
 import { HttpService } from './http.service';
-import { loggerService } from '../mocks/logger.service.mock';
-import { LoggerAdapter } from '../adapters/logger-adapter';
+import { LoggerAdapter } from '@iamanderson/shared-providers/logger';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { mockHttpService } from '../mocks/http.service.mock';
+
+/**
+ * Mock for LoggerService
+ */
+export const loggerService = {
+  init: jest.fn(),
+  start: jest.fn(),
+  end: jest.fn(),
+  debug: jest.fn(),
+  error: jest.fn(),
+  info: jest.fn(),
+  warning: jest.fn()
+};
 
 describe('HttpService', () => {
   let service: HttpService;

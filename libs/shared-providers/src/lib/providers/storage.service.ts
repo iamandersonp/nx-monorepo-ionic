@@ -2,7 +2,7 @@
 import { Injectable, inject } from '@angular/core';
 import { StorageAdapter } from '../adapters/storage-adapter';
 import { Storage } from '@ionic/storage-angular';
-import { LoggerAdapter } from '../adapters/logger-adapter';
+import { LoggerAdapter } from '@iamanderson/shared-providers/logger';
 import { APP_CONFIG, AppConfig } from '@iamanderson/app-config';
 
 /**
