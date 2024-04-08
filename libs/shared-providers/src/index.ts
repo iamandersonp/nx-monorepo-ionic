@@ -1,1 +1,1 @@
-export * from './lib/adapters/internationalization-adapter';
+export * from './lib/shared-providers.module';
