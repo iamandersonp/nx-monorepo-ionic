@@ -20,6 +20,9 @@
       "@iamanderson/shared-providers/http": [
         "libs/shared-providers/http/src/index.ts"
       ],
+      "@iamanderson/shared-providers/internationalization": [
+        "libs/shared-providers/internationalization/src/index.ts"
+      ],
       "@iamanderson/shared-providers/logger": [
         "libs/shared-providers/logger/src/index.ts"
       ],

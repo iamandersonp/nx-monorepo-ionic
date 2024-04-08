@@ -14,6 +14,7 @@
     "src/**/*.d.ts",
     "logger/src/lib/logger.service.spec.ts",
     "http/src/lib/http.service.spec.ts",
-    "storage/src/lib/storage.service.spec.ts"
+    "storage/src/lib/storage.service.spec.ts",
+    "internationalization/src/lib/internationalization.service.spec.ts"
   ]
 }
