@@ -1,7 +1,0 @@
-{
-  "name": "hex-arch",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
