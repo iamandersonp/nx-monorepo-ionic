@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { IonIcon } from '@ionic/angular/standalone';
 
 import { IconComponent } from './icon.component';
 
@@ -9,7 +9,7 @@ describe('IconComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot()]
+      imports: [IonIcon]
     }).compileComponents();
 
     fixture = TestBed.createComponent(IconComponent);

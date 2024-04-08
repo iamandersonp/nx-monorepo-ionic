@@ -29,7 +29,8 @@
       "@iamanderson/shared-providers/storage": [
         "libs/shared-providers/storage/src/index.ts"
       ],
-      "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"]
+      "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@iamanderson/shared-ui/icon": ["libs/shared-ui/icon/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

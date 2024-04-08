@@ -1,1 +1,1 @@
-export * from './lib/icon/icon.component';
+export * from './lib/shared-ui.module';

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonIcon } from '@ionic/angular/standalone';
 import { Component, Input } from '@angular/core';
 
 /**
@@ -14,7 +14,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule]
+  imports: [CommonModule, IonIcon]
 })
 export class IconComponent {
   /**
