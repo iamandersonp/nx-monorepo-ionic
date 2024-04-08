@@ -5,6 +5,6 @@ import { HttpService } from './http.service';
 
 @NgModule({
   imports: [CommonModule],
-  providers: [{ provide: HttpAdapter, useValue: HttpService }]
+  providers: [{ provide: HttpAdapter, useClass: HttpService }]
 })
 export class HttpModule {}

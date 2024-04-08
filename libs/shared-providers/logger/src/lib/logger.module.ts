@@ -5,6 +5,6 @@ import { LoggerService } from './logger.service';
 
 @NgModule({
   imports: [CommonModule],
-  providers: [{ provide: LoggerAdapter, useValue: LoggerService }]
+  providers: [{ provide: LoggerAdapter, useClass: LoggerService }]
 })
 export class LoggerModule {}
