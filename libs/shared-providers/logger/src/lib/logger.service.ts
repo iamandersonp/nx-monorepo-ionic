@@ -88,7 +88,11 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public debug(event: string) {
-    if (this.appConfig.logLevel <= LogLevel.DEBUG) {
+    if (
+      this.appConfig &&
+      this.appConfig.logLevel &&
+      this.appConfig.logLevel <= LogLevel.DEBUG
+    ) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[DEBUG]: ' + event,
         tipo: 'log-debug'
@@ -104,7 +108,11 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public info(event: string) {
-    if (this.appConfig.logLevel <= LogLevel.INFO) {
+    if (
+      this.appConfig &&
+      this.appConfig.logLevel &&
+      this.appConfig.logLevel <= LogLevel.INFO
+    ) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[INFO]:  ' + event,
         tipo: 'log-normal'
@@ -120,7 +128,11 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public warning(event: string) {
-    if (this.appConfig.logLevel <= LogLevel.WARNING) {
+    if (
+      this.appConfig &&
+      this.appConfig.logLevel &&
+      this.appConfig.logLevel <= LogLevel.WARNING
+    ) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[WARNING]: ' + event,
         tipo: 'log-warning'
@@ -136,7 +148,11 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public error(event: string) {
-    if (this.appConfig.logLevel <= LogLevel.ERROR) {
+    if (
+      this.appConfig &&
+      this.appConfig.logLevel &&
+      this.appConfig.logLevel <= LogLevel.ERROR
+    ) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[ERROR]: ' + event,
         tipo: 'log-error'

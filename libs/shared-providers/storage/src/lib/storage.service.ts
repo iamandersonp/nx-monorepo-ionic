@@ -110,14 +110,23 @@ export class StorageService extends StorageAdapter {
    */
   async checkDbVersion(): Promise<void> {
     this.loggerService.start('StorageService() - checkDbVersion');
-    const value =
-      Number(await this.get(this.appConfig.storeKeys.DB_VERSION)) || 0;
+    let key: string;
+    if (
+      this.appConfig &&
+      this.appConfig.storeKeys &&
+      this.appConfig.storeKeys.DB_VERSION
+    ) {
+      key = this.appConfig.storeKeys.DB_VERSION;
+    } else {
+      key = 'DB_VERSION';
+    }
+    const value = Number(await this.get(key)) || 0;
     this.loggerService.debug(
       'StorageService() - checkDbVersion - DB version : ' + value
     );
     if (value < (this.appConfig.dbVersion ?? 0)) {
       this.clear();
-      this.set(this.appConfig.storeKeys.DB_VERSION, this.appConfig.dbVersion);
+      this.set(key, this.appConfig.dbVersion);
       this.loggerService.debug(
         'StorageService() - checkDbVersion - DB version updated to ' +
           this.appConfig.dbVersion

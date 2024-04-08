@@ -148,10 +148,14 @@ export class InternationalizationService extends InternationalizationAdapter {
     this.loggerService.start(
       'InternationalizationService() - checDefaultLanguage()'
     );
-    this.translateSrv.addLangs(this.appConfig.languages);
-    const lng: string = (await this.storage.get(
-      this.appConfig.storeKeys.USER_LANGUAGE
-    )) as string;
+    this.translateSrv.addLangs(this.appConfig.languages ?? []);
+    let key: string;
+    if (this.appConfig.storeKeys) {
+      key = this.appConfig.storeKeys.USER_LANGUAGE;
+    } else {
+      key = 'USER_LANGUAGE';
+    }
+    const lng: string = (await this.storage.get(key)) as string;
     if (lng && this.checkAvaibible(lng)) {
       this.loggerService.debug(
         'InternationalizationService - USER_LANGUAGE ' + lng
@@ -168,10 +172,10 @@ export class InternationalizationService extends InternationalizationAdapter {
         if (this.checkAvaibible(navigatorLng)) {
           this.language = navigatorLng;
         } else {
-          this.language = this.appConfig.defaultLanguage;
+          this.language = this.appConfig.defaultLanguage || ''; // Assign an empty string as default if appConfig.defaultLanguage is undefined
         }
       } else {
-        this.language = this.appConfig.defaultLanguage;
+        this.language = this.appConfig.defaultLanguage || ''; // Assign an empty string as default if appConfig.defaultLanguage is undefined
       }
       this.setDefaultLng(this.language);
       this.useLanguage(this.language);
@@ -211,8 +215,14 @@ export class InternationalizationService extends InternationalizationAdapter {
    */
   public override set language(value: string) {
     document.documentElement.lang = value;
-    this.storage.remove(this.appConfig.storeKeys.USER_LANGUAGE);
-    this.storage.set(this.appConfig.storeKeys.USER_LANGUAGE, value);
+    let key: string;
+    if (this.appConfig.storeKeys) {
+      key = this.appConfig.storeKeys.USER_LANGUAGE;
+    } else {
+      key = 'USER_LANGUAGE';
+    }
+    this.storage.remove(key);
+    this.storage.set(key, value);
     super.language = value;
     this.subject.next(super.language);
     this.language$ = this.subject.asObservable();
@@ -278,7 +288,7 @@ export class InternationalizationService extends InternationalizationAdapter {
   useLanguage(lng: string) {
     const lang: string = this.checkAvaibible(lng)
       ? lng
-      : this.appConfig.defaultLanguage;
+      : this.appConfig.defaultLanguage ?? '';
     this.language = lang;
     this.translateSrv.use(lang);
   }

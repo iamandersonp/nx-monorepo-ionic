@@ -170,30 +170,43 @@ describe('StorageService', () => {
 
   describe('checkDbVersion', () => {
     it('should call storage.get method and return version 1', async () => {
+      let key: string;
+      if (
+        service.appConfig &&
+        service.appConfig.storeKeys &&
+        service.appConfig.storeKeys.DB_VERSION
+      ) {
+        key = service.appConfig.storeKeys.DB_VERSION;
+      } else {
+        key = 'DB_VERSION';
+      }
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
         .mockReturnValue(config);
       const versionSpy = jest.spyOn(service, 'get').mockResolvedValue('1');
       await service.checkDbVersion();
-      expect(versionSpy).toHaveBeenCalledWith(
-        service.appConfig.storeKeys.DB_VERSION
-      );
+      expect(versionSpy).toHaveBeenCalledWith(key);
       expect(configSpy).toHaveBeenCalled();
     });
     it('should call storage.get method return version 0 and update to version 1', async () => {
+      let key: string;
+      if (
+        service.appConfig &&
+        service.appConfig.storeKeys &&
+        service.appConfig.storeKeys.DB_VERSION
+      ) {
+        key = service.appConfig.storeKeys.DB_VERSION;
+      } else {
+        key = 'DB_VERSION';
+      }
       const configSpy = jest
         .spyOn(service, 'appConfig', 'get')
         .mockReturnValue(config);
       const versionSpy = jest.spyOn(service, 'get').mockResolvedValue('0');
       const updateSpy = jest.spyOn(service, 'set');
       await service.checkDbVersion();
-      expect(versionSpy).toHaveBeenCalledWith(
-        service.appConfig.storeKeys.DB_VERSION
-      );
-      expect(updateSpy).toHaveBeenCalledWith(
-        service.appConfig.storeKeys.DB_VERSION,
-        service.appConfig.dbVersion
-      );
+      expect(versionSpy).toHaveBeenCalledWith(key);
+      expect(updateSpy).toHaveBeenCalledWith(key, service.appConfig.dbVersion);
       expect(configSpy).toHaveBeenCalled();
     });
   });

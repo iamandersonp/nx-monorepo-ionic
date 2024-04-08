@@ -2,7 +2,7 @@ import { InjectionToken } from '@angular/core';
 
 export const APP_CONFIG = new InjectionToken('Application config');
 
-export interface AppConfig {
+interface config {
   production: boolean;
   timeOut: number;
   minInterval: number;
@@ -17,3 +17,5 @@ export interface AppConfig {
     USER_LANGUAGE: string;
   };
 }
+
+export type AppConfig = Partial<config>;
