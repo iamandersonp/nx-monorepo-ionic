@@ -54,19 +54,12 @@ export const loggerService = {
 describe('InternationalizationService', () => {
   let service: InternationalizationService;
   const config: AppConfig = {
-    logLevel: 0,
-    dbVersion: 1,
+    defaultLanguage: '',
+    languages: ['en', 'es'],
     storeKeys: {
       DB_VERSION: 'DB_VERSION',
       USER_LANGUAGE: 'USER_LANGUAGE'
-    },
-    production: false,
-    timeOut: 0,
-    minInterval: 0,
-    showLogs: false,
-    defaultLanguage: '',
-    languages: ['en', 'es'],
-    baseUrl: ''
+    }
   };
   const titleService = {
     setTitle: jest.fn()
