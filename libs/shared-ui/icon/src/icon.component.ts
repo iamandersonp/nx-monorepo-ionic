@@ -1,6 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { IonIcon } from '@ionic/angular/standalone';
 import { Component, Input } from '@angular/core';
+import { IonIcon } from '@ionic/angular/standalone';
 
 /**
  * Dumb component to add accesibility tagns and colors for ion icons
@@ -14,7 +13,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './icon.component.html',
   styleUrls: ['./icon.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonIcon]
+  imports: [IonIcon]
 })
 export class IconComponent {
   /**
