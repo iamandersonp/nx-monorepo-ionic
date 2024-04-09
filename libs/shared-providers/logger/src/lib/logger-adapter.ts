@@ -1,5 +1,42 @@
 /**
- * Logger adapter
+ * Logger level enum
+ *
+ * @export
+ * @enum {number}
+ */
+export enum LogLevel {
+  DEBUG = 0,
+  INFO = 1,
+  WARNING = 2,
+  ERROR = 3
+}
+
+/**
+ * Logger type enum
+ *
+ * @export
+ * @enum {number}
+ */
+export enum LogType {
+  NORMAL = 0,
+  DEBUG = 1,
+  WARNING = 2,
+  ERROR = 3
+}
+
+/**
+ * LogEvent Type
+ *
+ * @export
+ * @interface LogEvent
+ */
+export type LogEvent = {
+  text: string;
+  tipo: LogType;
+};
+
+/**
+ * Logger adapter Class to be implemented by the logger service
  *
  * @export
  * @abstract
@@ -10,27 +47,18 @@ export abstract class LoggerAdapter {
    * Array to store all the logs in the lifecycle of the app
    *
    * @private
-   * @type {Array<{ text: string; tipo: string }>}
+   * @type {Array<LogEvent>}
    * @memberof LoggerAdapter
    */
-  private _logEvents: Array<{
-    text: string;
-    tipo: string;
-  }> = [];
+  private _logEvents: Array<LogEvent> = [];
 
   /**
    * gettter for logEvents
    *
-   * @type {Array<{
-   *     text: string;
-   *     tipo: string;
-   *   }>}
+   * @type {Array<LogEvent>}
    * @memberof LoggerAdapter
    */
-  public get logEvents(): Array<{
-    text: string;
-    tipo: string;
-  }> {
+  public get logEvents(): Array<LogEvent> {
     return this._logEvents;
   }
 
@@ -39,7 +67,7 @@ export abstract class LoggerAdapter {
    *
    * @memberof LoggerAdapter
    */
-  public set logEvents(value: Array<{ text: string; tipo: string }>) {
+  public set logEvents(value: Array<LogEvent>) {
     this._logEvents = value;
   }
 

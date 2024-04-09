@@ -1,13 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { LoggerAdapter } from './logger-adapter';
+import { LogLevel, LogType, LoggerAdapter } from './logger-adapter';
 import { APP_CONFIG, AppConfig } from '@iamanderson/app-config';
-
-export enum LogLevel {
-  DEBUG = 0,
-  INFO = 1,
-  WARNING = 2,
-  ERROR = 3
-}
 
 /**
  * Utility used to pretty format the logs in the console
@@ -27,6 +20,34 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   private _appConfig: AppConfig = inject(APP_CONFIG) as AppConfig;
+
+  /**
+   * Log level
+   *
+   * @private
+   * @memberof LoggerService
+   */
+  private _loglevel = 0;
+
+  /**
+   * getter for the log level
+   *
+   * @type {number}
+   * @memberof LoggerService
+   */
+  public get loglevel(): number {
+    return this._loglevel;
+  }
+
+  /**
+   * Setter for the log level
+   *
+   * @memberof LoggerService
+   */
+  public set loglevel(value: number) {
+    this._loglevel = value;
+  }
+
   /**
    * Getter for the appConfig
    *
@@ -44,10 +65,15 @@ export class LoggerService extends LoggerAdapter {
    */
   constructor() {
     super();
+    if (this.appConfig && this.appConfig.logLevel !== undefined) {
+      this.loglevel = this.appConfig.logLevel;
+    } else {
+      this.loglevel = LogLevel.INFO;
+    }
     this.logEvents = [
       {
         text: this.mostrarhora() + '[INFO]:  App Start',
-        tipo: 'log-normal'
+        tipo: LogType.NORMAL
       }
     ];
   }
@@ -88,14 +114,10 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public debug(event: string) {
-    if (
-      this.appConfig &&
-      this.appConfig.logLevel &&
-      this.appConfig.logLevel <= LogLevel.DEBUG
-    ) {
+    if (this.loglevel <= LogLevel.DEBUG) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[DEBUG]: ' + event,
-        tipo: 'log-debug'
+        tipo: LogType.DEBUG
       });
       console.debug(this.mostrarhora() + '[DEBUG]: ' + event);
     }
@@ -108,14 +130,10 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public info(event: string) {
-    if (
-      this.appConfig &&
-      this.appConfig.logLevel &&
-      this.appConfig.logLevel <= LogLevel.INFO
-    ) {
+    if (this.loglevel <= LogLevel.INFO) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[INFO]:  ' + event,
-        tipo: 'log-normal'
+        tipo: LogType.NORMAL
       });
       console.log(this.mostrarhora() + '[INFO]:  ' + event);
     }
@@ -128,14 +146,10 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public warning(event: string) {
-    if (
-      this.appConfig &&
-      this.appConfig.logLevel &&
-      this.appConfig.logLevel <= LogLevel.WARNING
-    ) {
+    if (this.loglevel <= LogLevel.WARNING) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[WARNING]: ' + event,
-        tipo: 'log-warning'
+        tipo: LogType.WARNING
       });
       console.warn(this.mostrarhora() + '[WARNING]: ' + event);
     }
@@ -148,14 +162,10 @@ export class LoggerService extends LoggerAdapter {
    * @memberof LoggerService
    */
   public error(event: string) {
-    if (
-      this.appConfig &&
-      this.appConfig.logLevel &&
-      this.appConfig.logLevel <= LogLevel.ERROR
-    ) {
+    if (this.loglevel <= LogLevel.ERROR) {
       this.logEvents.unshift({
         text: this.mostrarhora() + '[ERROR]: ' + event,
-        tipo: 'log-error'
+        tipo: LogType.ERROR
       });
       console.error(this.mostrarhora() + '[ERROR]: ' + event);
     }
