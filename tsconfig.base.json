@@ -30,6 +30,7 @@
         "libs/shared-providers/storage/src/index.ts"
       ],
       "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@iamanderson/shared-ui/header": ["libs/shared-ui/header/src/index.ts"],
       "@iamanderson/shared-ui/icon": ["libs/shared-ui/icon/src/index.ts"],
       "@iamanderson/shared-ui/label": ["libs/shared-ui/label/src/index.ts"]
     }
