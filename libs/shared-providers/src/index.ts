@@ -1,1 +1,1 @@
-export * from './lib/shared-providers.module';
+export * from './shared-providers.module';

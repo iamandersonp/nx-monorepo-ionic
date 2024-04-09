@@ -1,2 +1,2 @@
-export * from './lib/http.module';
-export * from './lib/http.service';
+export * from './http.module';
+export * from './http.service';

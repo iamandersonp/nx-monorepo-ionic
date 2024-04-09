@@ -1,2 +1,2 @@
-export * from './lib/storage.module';
-export * from './lib/storage-adapter';
+export * from './storage.module';
+export * from './storage-adapter';

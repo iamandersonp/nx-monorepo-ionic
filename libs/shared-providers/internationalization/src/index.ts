@@ -1,1 +1,1 @@
-export * from './lib/internationalization.module';
+export * from './internationalization.module';

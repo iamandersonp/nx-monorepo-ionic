@@ -1,2 +1,2 @@
-export * from './lib/logger.module';
-export * from './lib/logger-adapter';
+export * from './logger.module';
+export * from './logger-adapter';
