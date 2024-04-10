@@ -1,0 +1,30 @@
+<ion-app
+  [ngClass]="{
+    fixed: detector.isDesktop(),
+    full: !detector.isDesktop()
+  }"
+>
+  <ion-split-pane
+    when="(min-width: 20040px)"
+    color="primary"
+    contentId="main-content"
+    (ionSplitPaneVisible)="onVisible($event)"
+  >
+    <ion-menu contentId="main-content" type="overlay" class="safe-area">
+      <ion-content class="fondo" color="primary">
+        <iamanderson-menu
+          [visible]="visible"
+          [appPages]="menus"
+          [tipoMenu]="tipoLink.INTERNAL"
+        ></iamanderson-menu>
+        <iamanderson-menu
+          [visible]="visible"
+          [displayLogo]="false"
+          [appPages]="externalLinks"
+          [tipoMenu]="tipoLink.EXTERNAL"
+        ></iamanderson-menu>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
