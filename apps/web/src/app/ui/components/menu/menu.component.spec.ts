@@ -1,5 +1,12 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonList,
+  IonTitle,
+  IonListHeader,
+  IonToolbar,
+  IonButtons,
+  IonButton
+} from '@ionic/angular/standalone';
 
 import { MenuComponent } from './menu.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -24,7 +31,15 @@ describe('MenuComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [IonicModule.forRoot(), TranslateModule.forRoot()],
+      imports: [
+        TranslateModule.forRoot(),
+        IonList,
+        IonTitle,
+        IonListHeader,
+        IonToolbar,
+        IonButtons,
+        IonButton
+      ],
       providers: [
         {
           provide: InternationalizationAdapter,
