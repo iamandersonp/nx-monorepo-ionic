@@ -1,0 +1,7 @@
+<ion-router-outlet
+  id="main-content"
+  [ngClass]="{
+    fixed: detector.isDesktop(),
+    full: !detector.isDesktop()
+  }"
+></ion-router-outlet>
