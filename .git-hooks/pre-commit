@@ -3,7 +3,7 @@
 
 git stash -q --keep-index
 
-find {apps,libs} -name .DS_Store -exec rm {} \; && nx format:write --all && npx nx affected --t lint test build --base=origin/develop --head=HEAD
+find {apps,libs} -name .DS_Store -exec rm {} \; && nx format:write --all && git add . && npx nx affected --t lint test build --base=origin/develop --head=HEAD
 
 status=$?
 
