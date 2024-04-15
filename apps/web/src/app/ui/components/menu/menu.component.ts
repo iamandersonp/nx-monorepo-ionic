@@ -105,7 +105,7 @@ export class MenuComponent {
    * @type {boolean}
    * @memberof MenuComponent
    */
-  @Input() visible = false;
+  @Input() open = false;
 
   /**
    * emun used to set the external/internal propiety

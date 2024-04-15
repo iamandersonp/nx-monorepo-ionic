@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IntrefaceMenu, TipoLink } from '../../components/menu/interface-menu';
 import { InternationalizationAdapter } from '@iamanderson/shared-providers/internationalization';
 import { DeviceDetectorService } from 'ngx-device-detector';
@@ -11,6 +11,7 @@ import {
 } from '@ionic/angular/standalone';
 import { MenuComponent } from '../../components/menu/menu.component';
 import { NgClass } from '@angular/common';
+import { appMenu } from '../../../app.routes';
 
 /**
  * Component to handle the main router-outlet of the app with side menu
@@ -78,15 +79,8 @@ export class LayaoutMenuComponent {
    * @type {IntrefaceMenu[]}
    * @memberof LayaoutMenuComponent
    */
-  @Input() menus: IntrefaceMenu[] = [];
+  public menus: IntrefaceMenu[] = appMenu;
 
-  /**
-   * Array of the external links
-   *
-   * @type {IntrefaceMenu[]}
-   * @memberof LayaoutMenuComponent
-   */
-  public externalLinks: IntrefaceMenu[] = [];
   /**
    * store the visible status of the spin pane
    *

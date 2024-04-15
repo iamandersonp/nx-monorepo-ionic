@@ -13,11 +13,12 @@
     <ion-menu contentId="main-content" type="overlay" class="safe-area">
       <ion-content class="fondo" color="primary">
         <iamanderson-menu
-          [visible]="visible"
+          [open]="visible"
           [appPages]="menus"
+          [displayLogo]="true"
         ></iamanderson-menu>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-router-outlet id="main-content" />
   </ion-split-pane>
 </ion-app>
