@@ -1,7 +1,11 @@
 import { Component, Input, inject } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { IonMenuToggle, MenuController } from '@ionic/angular/standalone';
+import {
+  IonMenuToggle,
+  MenuController,
+  IonItem
+} from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { IntrefaceMenu, TipoLink } from './interface-menu';
@@ -30,6 +34,7 @@ import { TranslateMessagePipe } from '../../utils/translate-message.pipe';
   styleUrls: ['./menu.component.scss'],
   standalone: true,
   imports: [
+    IonItem,
     IonButton,
     IonButtons,
     IonToolbar,
@@ -93,14 +98,6 @@ export class MenuComponent {
    * @memberof MenuComponent
    */
   @Input() appPages: IntrefaceMenu[] = [];
-
-  /**
-   * input propiety to set if the links are internal or external
-   *
-   * @type {TipoLink}
-   * @memberof MenuComponent
-   */
-  @Input() tipoMenu: TipoLink = TipoLink.EXTERNAL;
 
   /**
    * input to hide the close button when the spin panel is open

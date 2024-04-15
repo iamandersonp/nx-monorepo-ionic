@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {
+  IonItem,
   IonList,
   IonTitle,
   IonListHeader,
@@ -11,6 +12,7 @@ import {
 import { MenuComponent } from './menu.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { InternationalizationAdapter } from '@iamanderson/shared-providers/internationalization';
+import { TipoLink } from './interface-menu';
 
 /**
  *  Mock for L18nService
@@ -33,6 +35,7 @@ describe('MenuComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot(),
+        IonItem,
         IonList,
         IonTitle,
         IonListHeader,
@@ -60,9 +63,11 @@ describe('MenuComponent', () => {
   it('should have a Menu that contain 1 item', () => {
     component.appPages = [
       {
+        id: 1,
         title: 'menu.dashboard',
         url: ['/'],
-        icon: 'home'
+        icon: 'home',
+        tipo: TipoLink.INTERNAL
       }
     ];
     expect(component.appPages.length).toBe(1);

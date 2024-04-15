@@ -1,13 +1,14 @@
 <ion-list>
-  <ion-list-header *ngIf="displayLogo === true">
+  @if(displayLogo === true){
+  <ion-list-header>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
+        @if(!visible){
         <ion-button
           role="button"
           size="small"
-          [attr.aria-label]="'close'"
+          [attr.aria-label]="'butons.close' | translate"
           (click)="closeMenu()"
-          *ngIf="!visible"
         >
           <iamanderson-icon
             [name]="'close'"
@@ -15,26 +16,41 @@
             size="small"
           ></iamanderson-icon>
         </ion-button>
+        }
       </ion-buttons>
       <ion-title (click)="toggleDebug()">{{
         'common.appTitle' | translate
       }}</ion-title>
     </ion-toolbar>
   </ion-list-header>
-  <ion-menu-toggle
-    *ngIf="displayLogo === true"
-    color="primary"
-    auto-hide="false"
-  >
-    <ng-container *ngIf="tipoMenu === tipoLink.INTERNAL">
+  }
+  <ion-menu-toggle color="primary" auto-hide="false">
+    @for(p of appPages; track p.id; let idx = $index){
+    <ng-container>
+      @if( p.tipo === tipoLink.INTERNAL){
       <ion-item
-        *ngFor="let p of appPages; let i = index"
         color="primary"
         routerDirection="root"
         [routerLink]="p.url"
+        lines="none"
+        detail="true"
+        routerLinkActive="selected"
+        data-test="nav-list-item-"
+        {{idx}}
+      >
+        <iamanderson-icon slot="start" [name]="p.icon"></iamanderson-icon>
+        <iamanderson-label [attr.aria-label]="p.title | translate">{{
+          p.title | translateMessage | translate
+        }}</iamanderson-label>
+      </ion-item>
+      }@else if( p.tipo === tipoLink.EXTERNAL){
+      <ion-item
+        color="primary"
+        routerDirection="root"
+        [href]="p.url"
         [target]="p.target"
         lines="none"
-        detail
+        detail="true"
         routerLinkActive="selected"
         data-test="nav-list-items"
       >
@@ -43,39 +59,22 @@
           p.title | translateMessage | translate
         }}</iamanderson-label>
       </ion-item>
+      }
     </ng-container>
-    <ng-container *ngIf="debug">
-      <ion-item
-        color="primary"
-        routerDirection="root"
-        lines="none"
-        detail
-        routerLinkActive="selected"
-        data-test="nav-list-items"
-      >
-        <iamanderson-icon slot="start" [name]="'bug'"></iamanderson-icon>
-        <iamanderson-label [attr.aria-label]="'Debug'">
-          Depurador
-        </iamanderson-label>
-      </ion-item>
-    </ng-container>
-  </ion-menu-toggle>
-  <ng-container *ngIf="tipoMenu === tipoLink.EXTERNAL">
+    } @if(debug===true){
     <ion-item
-      *ngFor="let p of appPages; let i = index"
       color="primary"
       routerDirection="root"
-      href="p.url"
-      target="p.target"
       lines="none"
-      detail
+      detail="true"
       routerLinkActive="selected"
-      data-test="nav-list-items"
+      data-test="nav-list-item-debug"
     >
-      <iamanderson-icon slot="start" [name]="p.icon"></iamanderson-icon>
-      <iamanderson-label [attr.aria-label]="p.title | translate">{{
-        p.title | translateMessage | translate
-      }}</iamanderson-label>
+      <iamanderson-icon slot="start" [name]="'bug'"></iamanderson-icon>
+      <iamanderson-label [attr.aria-label]="'Debug'">
+        Depurador
+      </iamanderson-label>
     </ion-item>
-  </ng-container>
+    }
+  </ion-menu-toggle>
 </ion-list>

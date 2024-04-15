@@ -17,6 +17,13 @@ export enum TipoLink {
  */
 export interface IntrefaceMenu {
   /**
+   * id of the menu
+   *
+   * @type {number}
+   * @memberof IntrefaceMenu
+   */
+  id: number;
+  /**
    * title to display in the menu
    *
    * @type {string}

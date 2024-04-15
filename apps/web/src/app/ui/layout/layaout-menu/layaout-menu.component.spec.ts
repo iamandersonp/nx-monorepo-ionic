@@ -76,11 +76,13 @@ describe('LayaoutMenuComponent', () => {
   it('should render menu items', () => {
     const menuItems: IntrefaceMenu[] = [
       {
+        id: 1,
         title: 'menu.dashboard',
         url: ['/'],
         icon: 'home'
       },
       {
+        id: 2,
         title: 'menu.search',
         url: ['/search'],
         icon: 'search'
@@ -95,6 +97,7 @@ describe('LayaoutMenuComponent', () => {
   it('should render external links', () => {
     const externalLinks: IntrefaceMenu[] = [
       {
+        id: 1,
         title: 'external link',
         url: ['https://www.example.com'],
         icon: 'external-link',
