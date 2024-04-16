@@ -20,7 +20,7 @@ import {
   IonButtons,
   IonButton
 } from '@ionic/angular/standalone';
-import { TranslateMessagePipe } from '../../utils/translate-message.pipe';
+import { TranslateMessagePipe } from '../utils/translate-message.pipe';
 
 /**
  * Handle the left menu on the sidebar

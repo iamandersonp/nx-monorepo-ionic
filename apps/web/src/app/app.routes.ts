@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { IntrefaceMenu } from './ui/components/menu/interface-menu';
+import { IntrefaceMenu } from './ui/menu/interface-menu';
 
 export const appMenu: IntrefaceMenu[] = [
   {

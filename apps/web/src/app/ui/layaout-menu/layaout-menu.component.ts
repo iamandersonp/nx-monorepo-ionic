@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { IntrefaceMenu, TipoLink } from '../../components/menu/interface-menu';
+import { IntrefaceMenu, TipoLink } from '../menu/interface-menu';
 import { InternationalizationAdapter } from '@iamanderson/shared-providers/internationalization';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import {
@@ -9,9 +9,9 @@ import {
   IonMenu,
   IonRouterOutlet
 } from '@ionic/angular/standalone';
-import { MenuComponent } from '../../components/menu/menu.component';
+import { MenuComponent } from '../menu/menu.component';
 import { NgClass } from '@angular/common';
-import { appMenu } from '../../../app.routes';
+import { appMenu } from '../../app.routes';
 
 /**
  * Component to handle the main router-outlet of the app with side menu

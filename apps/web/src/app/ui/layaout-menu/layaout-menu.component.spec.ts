@@ -13,8 +13,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { InternationalizationAdapter } from '@iamanderson/shared-providers/internationalization';
 import { LayaoutMenuComponent } from './layaout-menu.component';
-import { IntrefaceMenu, TipoLink } from '../../components/menu/interface-menu';
-import { MenuComponent } from '../../components/menu/menu.component';
+import { IntrefaceMenu, TipoLink } from '../menu/interface-menu';
+import { MenuComponent } from '../menu/menu.component';
 
 /**
  *  Mock for L18nService
