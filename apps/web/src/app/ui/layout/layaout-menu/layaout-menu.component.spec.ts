@@ -65,7 +65,6 @@ describe('LayaoutMenuComponent', () => {
     fixture = TestBed.createComponent(LayaoutMenuComponent);
     component = fixture.componentInstance;
     component.menus = [];
-    component.externalLinks = [];
     fixture.detectChanges();
   }));
 
@@ -92,22 +91,6 @@ describe('LayaoutMenuComponent', () => {
     component.menus = menuItems;
     fixture.detectChanges();
     expect(component.menus).toEqual(menuItems);
-  });
-
-  it('should render external links', () => {
-    const externalLinks: IntrefaceMenu[] = [
-      {
-        id: 1,
-        title: 'external link',
-        url: ['https://www.example.com'],
-        icon: 'external-link',
-        target: '_blank'
-      }
-    ];
-
-    component.externalLinks = externalLinks;
-    fixture.detectChanges();
-    expect(component.externalLinks).toEqual(externalLinks);
   });
 
   it('should have tipoLink property', () => {
