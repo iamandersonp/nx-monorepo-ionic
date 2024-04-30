@@ -101,6 +101,6 @@ export class HttpService extends HttpAdapter {
    */
   public handleError(method: string, error: HttpErrorResponse) {
     this.logger.error(`HttpService - ${method} - ${error.message}`);
-    return throwError(error);
+    return throwError(() => error);
   }
 }
