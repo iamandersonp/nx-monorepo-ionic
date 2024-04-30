@@ -1,7 +1,8 @@
 import {
   APP_INITIALIZER,
   ApplicationConfig,
-  importProvidersFrom
+  importProvidersFrom,
+  isDevMode
 } from '@angular/core';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import {
@@ -27,6 +28,18 @@ import {
   StorageAdapter,
   StorageModule
 } from '@iamanderson/shared-providers/storage';
+import { StoreModule, provideStore } from '@ngrx/store';
+import {
+  StoreDevtoolsModule,
+  provideStoreDevtools
+} from '@ngrx/store-devtools';
+import { EffectsModule, provideEffects } from '@ngrx/effects';
+import {
+  RouterState,
+  StoreRouterConnectingModule,
+  provideRouterStore
+} from '@ngrx/router-store';
+import * as formRootRedurecer from './reducers';
 
 /**
  * loader for the internationalization service
@@ -67,9 +80,42 @@ export const appConfig: ApplicationConfig = {
     provideIonicAngular(),
     provideHttpClient(withInterceptorsFromDi()),
     provideRouter(appRoutes),
+    provideStore(formRootRedurecer.reducers, {
+      metaReducers: formRootRedurecer.metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictActionSerializability: true,
+        strictStateSerializability: true
+      }
+    }),
+    provideRouterStore({
+      stateKey: 'router',
+      routerState: RouterState.Minimal
+    }),
+    provideEffects(),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     importProvidersFrom(
       LoggerModule,
       StorageModule,
+      StoreModule.forRoot(formRootRedurecer.reducers, {
+        metaReducers: formRootRedurecer.metaReducers,
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+          strictActionSerializability: true,
+          strictStateSerializability: true
+        }
+      }),
+      StoreRouterConnectingModule.forRoot({
+        stateKey: 'router',
+        routerState: RouterState.Minimal
+      }),
+      EffectsModule.forRoot([]),
+      StoreDevtoolsModule.instrument({
+        maxAge: 25,
+        logOnly: false
+      }),
       TranslateModule.forRoot({
         loader: {
           provide: TranslateLoader,
