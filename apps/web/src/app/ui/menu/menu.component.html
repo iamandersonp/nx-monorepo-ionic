@@ -4,23 +4,27 @@
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
         @if(!open){
-        <ion-button
-          role="button"
+        <button
+          class="ion-button"
           size="small"
           [attr.aria-label]="'butons.close' | translate"
           (click)="closeMenu()"
+          (keyup.enter)="closeMenu()"
         >
           <iamanderson-icon
             [name]="'close'"
             slot="start"
             size="small"
           ></iamanderson-icon>
-        </ion-button>
+        </button>
         }
       </ion-buttons>
-      <ion-title (click)="toggleDebug()">{{
-        'common.appTitle' | translate
-      }}</ion-title>
+      <ion-title
+        (click)="toggleDebug()"
+        (keyup.enter)="toggleDebug()"
+        (keyup)="$event.key === 'Enter' && toggleDebug()"
+        ><ng-content></ng-content
+      ></ion-title>
     </ion-toolbar>
   </ion-list-header>
   }
@@ -37,6 +41,8 @@
         routerLinkActive="selected"
         data-test="nav-list-item-"
         {{idx}}
+        (click)="onItemClick(p.id)"
+        (keyup)="onItemClick(p.id)"
       >
         <iamanderson-icon slot="start" [name]="p.icon"></iamanderson-icon>
         <iamanderson-label [attr.aria-label]="p.title | translate">{{
@@ -52,7 +58,10 @@
         lines="none"
         detail="true"
         routerLinkActive="selected"
-        data-test="nav-list-items"
+        data-test="nav-list-item-"
+        {{idx}}
+        (click)="onItemClick(p.id)"
+        (keyup)="onItemClick(p.id)"
       >
         <iamanderson-icon slot="start" [name]="p.icon"></iamanderson-icon>
         <iamanderson-label [attr.aria-label]="p.title | translate">{{

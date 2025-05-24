@@ -16,9 +16,10 @@
           [open]="visible"
           [appPages]="menus"
           [displayLogo]="true"
-        ></iamanderson-menu>
+          >{{ 'common.appTitle' | translate }}</iamanderson-menu
+        >
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="main-content" />
+    <ion-router-outlet id="main-content"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

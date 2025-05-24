@@ -1,0 +1,825 @@
+{
+  "version": "6.0",
+  "nxVersion": "21.1.2",
+  "pathMappings": {
+    "@iamanderson/app-config": ["libs/app-config/src/index.ts"],
+    "@iamanderson/shared-providers": ["libs/shared-providers/src/index.ts"],
+    "@iamanderson/shared-providers/http": [
+      "libs/shared-providers/http/src/index.ts"
+    ],
+    "@iamanderson/shared-providers/internationalization": [
+      "libs/shared-providers/internationalization/src/index.ts"
+    ],
+    "@iamanderson/shared-providers/logger": [
+      "libs/shared-providers/logger/src/index.ts"
+    ],
+    "@iamanderson/shared-providers/storage": [
+      "libs/shared-providers/storage/src/index.ts"
+    ],
+    "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"],
+    "@iamanderson/shared-ui/header": ["libs/shared-ui/header/src/index.ts"],
+    "@iamanderson/shared-ui/icon": ["libs/shared-ui/icon/src/index.ts"],
+    "@iamanderson/shared-ui/label": ["libs/shared-ui/label/src/index.ts"]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".vscode/settings.json",
+        "hash": "3416611349250112797"
+      },
+      {
+        "file": ".versionrc.json",
+        "hash": "1563387128103850207"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8491837053101957257"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": "commitlint.config.js",
+        "hash": "10911334718918124759"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "7750561865063918804"
+      },
+      {
+        "file": "nx.json",
+        "hash": "13301196852633552910"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "1364458865636579595"
+      },
+      {
+        "file": ".git-hooks/commit-msg",
+        "hash": "5376578856185136399"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "4934098906304722861"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "16270094536115042640"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "5569825120770004012"
+      },
+      {
+        "file": ".git-hooks/pre-commit",
+        "hash": "2664969056089493104"
+      },
+      {
+        "file": "LICENSE.md",
+        "hash": "17034453874878140539"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": "package.json",
+        "hash": "128285233938298545"
+      },
+      {
+        "file": ".git-hooks/prepare-commit-msg",
+        "hash": "12423919284654752942"
+      },
+      {
+        "file": "README.md",
+        "hash": "140412950258178333"
+      }
+    ],
+    "projectFileMap": {
+      "web-e2e": [
+        {
+          "file": "apps/web-e2e/.eslintrc.json",
+          "hash": "14060216369337943343"
+        },
+        {
+          "file": "apps/web-e2e/cypress.config.ts",
+          "hash": "4265049300706748017",
+          "deps": ["npm:@nx/cypress", "npm:cypress"]
+        },
+        {
+          "file": "apps/web-e2e/project.json",
+          "hash": "6817399376469211747"
+        },
+        {
+          "file": "apps/web-e2e/src/e2e/app.cy.ts",
+          "hash": "1626985499450916261"
+        },
+        {
+          "file": "apps/web-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "apps/web-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/web-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "apps/web-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "apps/web-e2e/tsconfig.json",
+          "hash": "4332380883180617610"
+        }
+      ],
+      "shared-providers": [
+        {
+          "file": "libs/shared-providers/.eslintrc.json",
+          "hash": "2206948773468973895"
+        },
+        {
+          "file": "libs/shared-providers/README.md",
+          "hash": "1716950047478041585"
+        },
+        {
+          "file": "libs/shared-providers/http/README.md",
+          "hash": "6720720717398177525"
+        },
+        {
+          "file": "libs/shared-providers/http/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-providers/http/src/http-adapter.ts",
+          "hash": "16796496948379738094",
+          "deps": ["npm:rxjs"]
+        },
+        {
+          "file": "libs/shared-providers/http/src/http.module.ts",
+          "hash": "18027068683065491605",
+          "deps": ["npm:@angular/core", "npm:@angular/common"]
+        },
+        {
+          "file": "libs/shared-providers/http/src/http.service.spec.ts",
+          "hash": "9717858139387291677",
+          "deps": ["npm:@angular/core", "npm:@angular/common", "npm:rxjs"]
+        },
+        {
+          "file": "libs/shared-providers/http/src/http.service.ts",
+          "hash": "8821020811397453781",
+          "deps": ["npm:@angular/core", "npm:@angular/common", "npm:rxjs"]
+        },
+        {
+          "file": "libs/shared-providers/http/src/index.ts",
+          "hash": "1029548118146688902"
+        },
+        {
+          "file": "libs/shared-providers/internationalization/README.md",
+          "hash": "12001830272720120274"
+        },
+        {
+          "file": "libs/shared-providers/internationalization/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-providers/internationalization/src/index.ts",
+          "hash": "10164682304151899266"
+        },
+        {
+          "file": "libs/shared-providers/internationalization/src/internationalization-adapter.ts",
+          "hash": "9173591776438644953",
+          "deps": ["npm:rxjs"]
+        },
+        {
+          "file": "libs/shared-providers/internationalization/src/internationalization.module.ts",
+          "hash": "9266533113962930114",
+          "deps": ["npm:@angular/core", "npm:@angular/common"]
+        },
+        {
+          "file": "libs/shared-providers/internationalization/src/internationalization.service.spec.ts",
+          "hash": "6954233886272931127",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ngx-translate/core",
+            "npm:@angular/platform-browser",
+            "npm:rxjs",
+            "app-config"
+          ]
+        },
+        {
+          "file": "libs/shared-providers/internationalization/src/internationalization.service.ts",
+          "hash": "9886520228590277481",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@ngx-translate/core",
+            "app-config"
+          ]
+        },
+        {
+          "file": "libs/shared-providers/jest.config.ts",
+          "hash": "5940872304642560118"
+        },
+        {
+          "file": "libs/shared-providers/logger/README.md",
+          "hash": "15109829264880799857"
+        },
+        {
+          "file": "libs/shared-providers/logger/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-providers/logger/src/index.ts",
+          "hash": "10500480738474828567"
+        },
+        {
+          "file": "libs/shared-providers/logger/src/logger-adapter.ts",
+          "hash": "6056145903745219285"
+        },
+        {
+          "file": "libs/shared-providers/logger/src/logger.module.ts",
+          "hash": "15657423259238669682",
+          "deps": ["npm:@angular/core", "npm:@angular/common"]
+        },
+        {
+          "file": "libs/shared-providers/logger/src/logger.service.spec.ts",
+          "hash": "10373228737927645544",
+          "deps": ["npm:@angular/core", "app-config"]
+        },
+        {
+          "file": "libs/shared-providers/logger/src/logger.service.ts",
+          "hash": "16924103270004629111",
+          "deps": ["npm:@angular/core", "app-config"]
+        },
+        {
+          "file": "libs/shared-providers/ng-package.json",
+          "hash": "8679954986034813475"
+        },
+        {
+          "file": "libs/shared-providers/package.json",
+          "hash": "9611607712918107972",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "app-config",
+            "npm:@ionic/storage-angular",
+            "npm:@ngx-translate/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/shared-providers/project.json",
+          "hash": "8455409815281797749"
+        },
+        {
+          "file": "libs/shared-providers/src/index.ts",
+          "hash": "8312435886928947446"
+        },
+        {
+          "file": "libs/shared-providers/src/shared-providers.module.ts",
+          "hash": "12013873673646356726",
+          "deps": ["npm:@angular/core", "npm:@angular/common"]
+        },
+        {
+          "file": "libs/shared-providers/src/test-setup.ts",
+          "hash": "1916778246416416129",
+          "deps": ["npm:jest-preset-angular"]
+        },
+        {
+          "file": "libs/shared-providers/storage/README.md",
+          "hash": "3348114846377095242"
+        },
+        {
+          "file": "libs/shared-providers/storage/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-providers/storage/src/index.ts",
+          "hash": "1510896826142454140"
+        },
+        {
+          "file": "libs/shared-providers/storage/src/storage-adapter.ts",
+          "hash": "13022945164019952480"
+        },
+        {
+          "file": "libs/shared-providers/storage/src/storage.module.ts",
+          "hash": "7789196481488415093",
+          "deps": ["npm:@angular/core", "npm:@angular/common"]
+        },
+        {
+          "file": "libs/shared-providers/storage/src/storage.service.spec.ts",
+          "hash": "10904000012970005679",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ionic/storage-angular",
+            "app-config"
+          ]
+        },
+        {
+          "file": "libs/shared-providers/storage/src/storage.service.ts",
+          "hash": "14920475999171341479",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ionic/storage-angular",
+            "app-config"
+          ]
+        },
+        {
+          "file": "libs/shared-providers/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/shared-providers/tsconfig.lib.json",
+          "hash": "6707393171849528675"
+        },
+        {
+          "file": "libs/shared-providers/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "libs/shared-providers/tsconfig.spec.json",
+          "hash": "2962430532829765879"
+        }
+      ],
+      "web": [
+        {
+          "file": "apps/web/.eslintrc.json",
+          "hash": "11708562189993133618"
+        },
+        {
+          "file": "apps/web/.gitignore",
+          "hash": "13537870046176692662"
+        },
+        {
+          "file": "apps/web/capacitor.config.ts",
+          "hash": "8437326705247267818",
+          "deps": ["npm:@capacitor/cli", "npm:ip"]
+        },
+        {
+          "file": "apps/web/jest.config.ts",
+          "hash": "9312648289306435716"
+        },
+        {
+          "file": "apps/web/package.json",
+          "hash": "17843082277866278139",
+          "deps": [
+            "npm:@capacitor/cli",
+            "npm:@capacitor/ios",
+            "npm:@capacitor/android"
+          ]
+        },
+        {
+          "file": "apps/web/project.json",
+          "hash": "9652814142962524013"
+        },
+        {
+          "file": "apps/web/src/app/app.config.ts",
+          "hash": "10477739522477041052",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@angular/common",
+            "npm:@ionic/storage",
+            "npm:@ionic/angular",
+            "npm:@ionic/storage-angular",
+            "npm:@ngx-translate/core",
+            "npm:@ngx-translate/http-loader",
+            "app-config",
+            "shared-providers",
+            "npm:@ngrx/store",
+            "npm:@ngrx/store-devtools",
+            "npm:@ngrx/effects",
+            "npm:@ngrx/router-store"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/app.routes.ts",
+          "hash": "3634305303450914289",
+          "deps": ["npm:@angular/router"]
+        },
+        {
+          "file": "apps/web/src/app/reducers/index.ts",
+          "hash": "8297022084629191734",
+          "deps": ["npm:@ngrx/store", "npm:@ngrx/router-store"]
+        },
+        {
+          "file": "apps/web/src/app/ui/app/app.component.html",
+          "hash": "2749903881293294910"
+        },
+        {
+          "file": "apps/web/src/app/ui/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/web/src/app/ui/app/app.component.spec.ts",
+          "hash": "12368740745072932230",
+          "deps": ["npm:@angular/core", "npm:@angular/router"]
+        },
+        {
+          "file": "apps/web/src/app/ui/app/app.component.ts",
+          "hash": "11705232775326936339",
+          "deps": ["npm:@angular/core", "npm:@ionic/angular"]
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-menu/layaout-menu.component.html",
+          "hash": "8095106141168233480"
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-menu/layaout-menu.component.scss",
+          "hash": "8393431692161101197"
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-menu/layaout-menu.component.spec.ts",
+          "hash": "11728634242404073929",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ionic/angular",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:ngx-device-detector",
+            "npm:@ngx-translate/core",
+            "shared-providers"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-menu/layaout-menu.component.ts",
+          "hash": "10433454417697505400",
+          "deps": [
+            "npm:@angular/core",
+            "shared-providers",
+            "npm:ngx-device-detector",
+            "npm:@ionic/angular",
+            "npm:@angular/common",
+            "npm:@ngx-translate/core"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-no-menu/layaout-no-menu.component.html",
+          "hash": "17487998929522187762"
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-no-menu/layaout-no-menu.component.scss",
+          "hash": "14293777251589694540"
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-no-menu/layaout-no-menu.component.spec.ts",
+          "hash": "10310919804620980910",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ionic/angular",
+            "npm:@angular/router",
+            "npm:rxjs",
+            "npm:ngx-device-detector"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/ui/layaout-no-menu/layaout-no-menu.component.ts",
+          "hash": "316751299893127284",
+          "deps": [
+            "npm:@angular/core",
+            "npm:ngx-device-detector",
+            "npm:@ionic/angular",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/ui/menu/interface-menu.ts",
+          "hash": "6715151254094795118"
+        },
+        {
+          "file": "apps/web/src/app/ui/menu/menu.component.html",
+          "hash": "15194439361194123658"
+        },
+        {
+          "file": "apps/web/src/app/ui/menu/menu.component.scss",
+          "hash": "1725685336310844688"
+        },
+        {
+          "file": "apps/web/src/app/ui/menu/menu.component.spec.ts",
+          "hash": "4498609662332183947",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ionic/angular",
+            "npm:@ngx-translate/core",
+            "shared-providers"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/ui/menu/menu.component.ts",
+          "hash": "17830622808852822663",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@ionic/angular",
+            "npm:@ngx-translate/core",
+            "shared-ui",
+            "shared-providers"
+          ]
+        },
+        {
+          "file": "apps/web/src/app/ui/utils/translate-message.pipe.spec.ts",
+          "hash": "1204203445866974345"
+        },
+        {
+          "file": "apps/web/src/app/ui/utils/translate-message.pipe.ts",
+          "hash": "5293858256374323032",
+          "deps": ["npm:@angular/core"]
+        },
+        {
+          "file": "apps/web/src/assets/i18n/en.json",
+          "hash": "4387954807038197551"
+        },
+        {
+          "file": "apps/web/src/assets/icon/favicon.png",
+          "hash": "17482944836898362639"
+        },
+        {
+          "file": "apps/web/src/assets/shapes.svg",
+          "hash": "4708889011185296100"
+        },
+        {
+          "file": "apps/web/src/enviroments/environment.prod.ts",
+          "hash": "12527469181289696164",
+          "deps": ["app-config"]
+        },
+        {
+          "file": "apps/web/src/enviroments/environment.ts",
+          "hash": "8137264350044921003",
+          "deps": ["app-config"]
+        },
+        {
+          "file": "apps/web/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/web/src/index.html",
+          "hash": "2477864878954410170"
+        },
+        {
+          "file": "apps/web/src/main.ts",
+          "hash": "2383138641725263370",
+          "deps": ["npm:@angular/platform-browser"]
+        },
+        {
+          "file": "apps/web/src/styles.scss",
+          "hash": "10556354040785411376"
+        },
+        {
+          "file": "apps/web/src/test-setup.ts",
+          "hash": "1916778246416416129",
+          "deps": ["npm:jest-preset-angular"]
+        },
+        {
+          "file": "apps/web/src/theme/variables.scss",
+          "hash": "9577613374487046702"
+        },
+        {
+          "file": "apps/web/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "apps/web/tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "apps/web/tsconfig.json",
+          "hash": "11271817794535700763"
+        },
+        {
+          "file": "apps/web/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "app-config": [
+        {
+          "file": "libs/app-config/.eslintrc.json",
+          "hash": "2206948773468973895"
+        },
+        {
+          "file": "libs/app-config/README.md",
+          "hash": "8743313472359676057"
+        },
+        {
+          "file": "libs/app-config/jest.config.ts",
+          "hash": "4871301393969758864"
+        },
+        {
+          "file": "libs/app-config/ng-package.json",
+          "hash": "6679078706348158975"
+        },
+        {
+          "file": "libs/app-config/package.json",
+          "hash": "10949921887074271337",
+          "deps": ["npm:@angular/core"]
+        },
+        {
+          "file": "libs/app-config/project.json",
+          "hash": "14649880903869524988"
+        },
+        {
+          "file": "libs/app-config/src/index.ts",
+          "hash": "13848317364006942761",
+          "deps": ["npm:@angular/core"]
+        },
+        {
+          "file": "libs/app-config/src/test-setup.ts",
+          "hash": "1916778246416416129",
+          "deps": ["npm:jest-preset-angular"]
+        },
+        {
+          "file": "libs/app-config/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/app-config/tsconfig.lib.json",
+          "hash": "5796668385415907511"
+        },
+        {
+          "file": "libs/app-config/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "libs/app-config/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "shared-ui": [
+        {
+          "file": "libs/shared-ui/.eslintrc.json",
+          "hash": "2206948773468973895"
+        },
+        {
+          "file": "libs/shared-ui/README.md",
+          "hash": "16248885516767211022"
+        },
+        {
+          "file": "libs/shared-ui/header/README.md",
+          "hash": "1513652625911128566"
+        },
+        {
+          "file": "libs/shared-ui/header/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-ui/header/src/header.component.html",
+          "hash": "13107667597436010843"
+        },
+        {
+          "file": "libs/shared-ui/header/src/header.component.scss",
+          "hash": "13477113102339946863"
+        },
+        {
+          "file": "libs/shared-ui/header/src/header.component.spec.ts",
+          "hash": "8204636516334949688",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@ionic/angular",
+            "npm:@ngx-translate/core"
+          ]
+        },
+        {
+          "file": "libs/shared-ui/header/src/header.component.ts",
+          "hash": "9853808468996147925",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@ionic/angular"
+          ]
+        },
+        {
+          "file": "libs/shared-ui/header/src/index.ts",
+          "hash": "12541423769449981273"
+        },
+        {
+          "file": "libs/shared-ui/icon/README.md",
+          "hash": "6378337050115705752"
+        },
+        {
+          "file": "libs/shared-ui/icon/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-ui/icon/src/icon.component.html",
+          "hash": "8415437387964197702"
+        },
+        {
+          "file": "libs/shared-ui/icon/src/icon.component.scss",
+          "hash": "5567394646056540136"
+        },
+        {
+          "file": "libs/shared-ui/icon/src/icon.component.spec.ts",
+          "hash": "11516821265561728546",
+          "deps": ["npm:@angular/core", "npm:@ionic/angular"]
+        },
+        {
+          "file": "libs/shared-ui/icon/src/icon.component.ts",
+          "hash": "18404286354486231055",
+          "deps": ["npm:@angular/core", "npm:@ionic/angular"]
+        },
+        {
+          "file": "libs/shared-ui/icon/src/index.ts",
+          "hash": "15402072519647036792"
+        },
+        {
+          "file": "libs/shared-ui/jest.config.ts",
+          "hash": "11019592577220534823"
+        },
+        {
+          "file": "libs/shared-ui/label/README.md",
+          "hash": "6213973541544990799"
+        },
+        {
+          "file": "libs/shared-ui/label/ng-package.json",
+          "hash": "12781977952105802458"
+        },
+        {
+          "file": "libs/shared-ui/label/src/index.ts",
+          "hash": "16235475913685582905"
+        },
+        {
+          "file": "libs/shared-ui/label/src/label.component.html",
+          "hash": "17548047161750035089"
+        },
+        {
+          "file": "libs/shared-ui/label/src/label.component.scss",
+          "hash": "14917994119975128669"
+        },
+        {
+          "file": "libs/shared-ui/label/src/label.component.spec.ts",
+          "hash": "18246430034147403748",
+          "deps": ["npm:@angular/core", "npm:@ionic/angular"]
+        },
+        {
+          "file": "libs/shared-ui/label/src/label.component.ts",
+          "hash": "16965759407140105521",
+          "deps": ["npm:@angular/core", "npm:@ionic/angular"]
+        },
+        {
+          "file": "libs/shared-ui/ng-package.json",
+          "hash": "17903636917875642431"
+        },
+        {
+          "file": "libs/shared-ui/package.json",
+          "hash": "5729413540505325023",
+          "deps": [
+            "npm:@angular/common",
+            "npm:@angular/core",
+            "npm:@ionic/angular"
+          ]
+        },
+        {
+          "file": "libs/shared-ui/project.json",
+          "hash": "3102589891714411079"
+        },
+        {
+          "file": "libs/shared-ui/src/index.ts",
+          "hash": "15538221704532702311"
+        },
+        {
+          "file": "libs/shared-ui/src/lib/shared-ui.module.ts",
+          "hash": "13843648945000388168",
+          "deps": ["npm:@angular/core", "npm:@angular/common"]
+        },
+        {
+          "file": "libs/shared-ui/src/test-setup.ts",
+          "hash": "1916778246416416129",
+          "deps": ["npm:jest-preset-angular"]
+        },
+        {
+          "file": "libs/shared-ui/tsconfig.json",
+          "hash": "15487755565970508470"
+        },
+        {
+          "file": "libs/shared-ui/tsconfig.lib.json",
+          "hash": "6707393171849528675"
+        },
+        {
+          "file": "libs/shared-ui/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "libs/shared-ui/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ]
+    }
+  }
+}

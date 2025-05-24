@@ -1,10 +1,14 @@
-import { Component, Input, inject } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
   IonMenuToggle,
   MenuController,
-  IonItem
+  IonItem,
+  IonList,
+  IonTitle,
+  IonListHeader,
+  IonToolbar,
+  IonButtons
 } from '@ionic/angular/standalone';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -12,14 +16,6 @@ import { IntrefaceMenu, TipoLink } from './interface-menu';
 import { LabelComponent } from '@iamanderson/shared-ui/label';
 import { IconComponent } from '@iamanderson/shared-ui/icon';
 import { InternationalizationAdapter } from '@iamanderson/shared-providers/internationalization';
-import {
-  IonList,
-  IonTitle,
-  IonListHeader,
-  IonToolbar,
-  IonButtons,
-  IonButton
-} from '@ionic/angular/standalone';
 import { TranslateMessagePipe } from '../utils/translate-message.pipe';
 
 /**
@@ -35,20 +31,17 @@ import { TranslateMessagePipe } from '../utils/translate-message.pipe';
   standalone: true,
   imports: [
     IonItem,
-    IonButton,
     IonButtons,
     IonToolbar,
     IonMenuToggle,
     IonListHeader,
     IonTitle,
     IonList,
-    CommonModule,
     TranslateModule,
     TranslateMessagePipe,
     RouterModule,
     LabelComponent,
-    IconComponent,
-    NgIf
+    IconComponent
   ]
 })
 export class MenuComponent {
@@ -59,7 +52,7 @@ export class MenuComponent {
    * @type {MenuController}
    * @memberof MenuComponent
    */
-  private menu: MenuController = inject(MenuController);
+  private readonly menu: MenuController = inject(MenuController);
 
   /**
    * inject InternationalizationAdapter
@@ -68,7 +61,7 @@ export class MenuComponent {
    * @type {InternationalizationAdapter}
    * @memberof MenuComponent
    */
-  private _l18nSrv: InternationalizationAdapter = inject(
+  private readonly _l18nSrv: InternationalizationAdapter = inject(
     InternationalizationAdapter
   );
 
@@ -106,6 +99,7 @@ export class MenuComponent {
    * @memberof MenuComponent
    */
   @Input() open = false;
+  @Output() itemSelected: EventEmitter<number> = new EventEmitter<number>();
 
   /**
    * emun used to set the external/internal propiety
@@ -192,5 +186,15 @@ export class MenuComponent {
       this.countClicks = 0;
       this.debug = !this.debug;
     }
+  }
+
+  /**
+   * Emit the id of the selected item
+   *
+   * @param {number} id - id of the selected item
+   * @memberof MenuComponent
+   */
+  onItemClick(id: number) {
+    this.itemSelected.emit(id);
   }
 }

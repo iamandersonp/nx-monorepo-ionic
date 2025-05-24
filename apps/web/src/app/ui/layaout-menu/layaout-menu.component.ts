@@ -12,6 +12,7 @@ import {
 import { MenuComponent } from '../menu/menu.component';
 import { NgClass } from '@angular/common';
 import { appMenu } from '../../app.routes';
+import { TranslateModule } from '@ngx-translate/core';
 
 /**
  * Component to handle the main router-outlet of the app with side menu
@@ -31,7 +32,8 @@ import { appMenu } from '../../app.routes';
     IonMenu,
     IonSplitPane,
     IonApp,
-    MenuComponent
+    MenuComponent,
+    TranslateModule
   ]
 })
 export class LayaoutMenuComponent {
@@ -42,7 +44,7 @@ export class LayaoutMenuComponent {
    * @type {InternationalizationAdapter}
    * @memberof LayaoutMenuComponent
    */
-  private _l18nSrv: InternationalizationAdapter = inject(
+  private readonly _l18nSrv: InternationalizationAdapter = inject(
     InternationalizationAdapter
   );
 
@@ -53,7 +55,9 @@ export class LayaoutMenuComponent {
    * @type {DeviceDetectorService}
    * @memberof LayaoutMenuComponent
    */
-  private _detector: DeviceDetectorService = inject(DeviceDetectorService);
+  private readonly _detector: DeviceDetectorService = inject(
+    DeviceDetectorService
+  );
 
   /**
    * getter for DeviceDetectorService

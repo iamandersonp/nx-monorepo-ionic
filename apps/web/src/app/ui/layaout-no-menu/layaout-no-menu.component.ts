@@ -25,7 +25,9 @@ export class LayaoutNoMenuComponent {
    * @type {DeviceDetectorService}
    * @memberof LayaoutNoMenuComponent
    */
-  private _detector: DeviceDetectorService = inject(DeviceDetectorService);
+  private readonly _detector: DeviceDetectorService = inject(
+    DeviceDetectorService
+  );
 
   /**
    * getter for DeviceDetectorService
