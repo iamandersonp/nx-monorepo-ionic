@@ -27,11 +27,41 @@
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "options": {
-        "passWithNoTests": true
+        "passWithNoTests": true,
+        "reporters": ["default", "@casualbot/jest-sonar-reporter"],
+        "coverageReporters": ["clover", "lcov", "text", "text-summary"],
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+          "{projectRoot}/src/**/*.ts",
+          "!{projectRoot}/src/**/*.spec.ts",
+          "!{projectRoot}/src/test-setup.ts",
+          "!{projectRoot}/src/main.ts",
+          "!{projectRoot}/src/polyfills.ts",
+          "!{projectRoot}/src/environments/*.ts",
+          "!{projectRoot}-e2e/src"
+        ],
+        "coverageDirectory": "{workspaceRoot}/coverage/{projectRoot}",
+        "coverageThreshold": {
+          "global": {
+            "branches": 80,
+            "functions": 80,
+            "lines": 80,
+            "statements": 80
+          }
+        },
+        "testPathIgnorePatterns": [
+          "/node_modules/",
+          "/dist/",
+          "/build/",
+          "/coverage/",
+          "/{projectRoot}-e2e/"
+        ]
       },
       "configurations": {
         "ci": {
-          "ci": true,
+          "ci": true
+        },
+        "codeCoverage": {
           "codeCoverage": true
         }
       }

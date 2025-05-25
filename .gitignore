@@ -40,4 +40,8 @@ Thumbs.db
 
 .angular
 .nx
-.nx/workspace-data/d/
+.nx
+sonar-project.properties
+.scannerwork
+.sonarlint
+test-report.xml

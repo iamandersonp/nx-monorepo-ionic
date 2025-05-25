@@ -1,0 +1,13 @@
+sonar.host.url=http://localhost:9000
+sonar.token=TOKEN
+sonar.projectKey=NBM
+sonar.projectName=NBM
+sonar.projectVersion=1.0
+sonar.sourceEncoding=UTF-8
+# sonar.sources=apps/web,libs
+# sonar.tests=apps/web,libs
+sonar.language=ts
+sonar.test.inclusion=**/*.spec.ts
+sonar.exclusions=**/node_modules/**,dists,tmp
+sonar.typescript.lcov.reportPaths=coverage/lcov.info
+sonar.coverage.jacoco.xmlReportPaths=coverage/sonarqube_report.xml
