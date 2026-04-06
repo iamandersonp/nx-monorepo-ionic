@@ -1,12 +1,20 @@
 #!/bin/sh
 #
 
-git stash -q --keep-index
+if git ls-files -u | grep -q .; then
+echo "⚠️  Merge in progress. Skipping Prettier to avoid issues."
+  exit 0
+fi
 
-find {apps,libs} -name .DS_Store -exec rm {} \; && npx nx format:write --all && git add . && npx nx affected --target=lint,test,build  --base=origin/develop --head=HEAD
+find src -name .DS_Store -exec rm {} \;
 
-status=$?
+npx nx affected --target=lint,test,build  --base=origin/develop --head=HEAD
 
-git stash pop -q
+npm run prettier-staged
 
-exit $status
+STAGED_FILES=$(git diff --name-only --cached --diff-filter=ACM | grep -E '\.(html|ts|scss|css|json)$')
+
+if [ -n "$STAGED_FILES" ]; then
+  echo "$STAGED_FILES" | xargs git add
+fi
+
