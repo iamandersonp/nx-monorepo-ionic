@@ -33,7 +33,7 @@
     "@casualbot/jest-sonar-reporter": "^2.4.0",
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
-    "@iamandersonp/prettier-staged": "^0.3.1",
+    "@iamandersonp/prettier-staged": "^0.5.0",
     "@ngrx/effects": "^17.2.0",
     "@ngrx/eslint-plugin": "^17.2.0",
     "@ngrx/router-store": "^17.2.0",
