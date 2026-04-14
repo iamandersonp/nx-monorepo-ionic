@@ -1,9 +1,11 @@
 #!/bin/sh
 #
 
+find . -name .DS_Store -exec rm {} \;
+
 git stash -q --keep-index
 
-find src/ -name .DS_Store -exec rm {} \; && nx format:write --all
+npx nx format:write --all
 
 status=$?
 
