@@ -27,7 +27,7 @@ if git ls-files -u | grep -q .; then
   exit 0
 fi
 
-find src -name .DS_Store -exec rm {} \;
+find . -name .DS_Store -exec rm {} \;
 
 npx nx affected --target=lint,test,build  --base=origin/develop --head=HEAD
 
