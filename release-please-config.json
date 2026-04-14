@@ -1,0 +1,27 @@
+{
+  "packages": {
+    "libs/app-config": {
+      "release-type": "node",
+      "package-name": "@iamandersonp/app-config",
+      "initial-version": "0.0.0",
+      "changelog-path": "CHANGELOG.md"
+    },
+    "libs/shared-providers": {
+      "release-type": "node",
+      "package-name": "@iamandersonp/shared-providers",
+      "initial-version": "0.0.0",
+      "changelog-path": "CHANGELOG.md"
+    },
+    "libs/shared-ui": {
+      "release-type": "node",
+      "package-name": "@iamandersonp/shared-ui",
+      "initial-version": "0.0.0",
+      "changelog-path": "CHANGELOG.md"
+    }
+  },
+  "plugins": [
+    {
+      "type": "node-workspace"
+    }
+  ]
+}
