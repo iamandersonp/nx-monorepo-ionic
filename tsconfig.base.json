@@ -14,7 +14,26 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@iamanderson/app-config": ["libs/app-config/src/index.ts"],
+      "@iamanderson/shared-providers": ["libs/shared-providers/src/index.ts"],
+      "@iamanderson/shared-providers/http": [
+        "libs/shared-providers/http/src/index.ts"
+      ],
+      "@iamanderson/shared-providers/internationalization": [
+        "libs/shared-providers/internationalization/src/index.ts"
+      ],
+      "@iamanderson/shared-providers/logger": [
+        "libs/shared-providers/logger/src/index.ts"
+      ],
+      "@iamanderson/shared-providers/storage": [
+        "libs/shared-providers/storage/src/index.ts"
+      ],
+      "@iamanderson/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@iamanderson/shared-ui/header": ["libs/shared-ui/header/src/index.ts"],
+      "@iamanderson/shared-ui/icon": ["libs/shared-ui/icon/src/index.ts"],
+      "@iamanderson/shared-ui/label": ["libs/shared-ui/label/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

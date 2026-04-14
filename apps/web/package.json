@@ -1,0 +1,9 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@capacitor/cli": "^5.0.3",
+    "@capacitor/ios": "../../node_modules/@capacitor/ios",
+    "@capacitor/android": "../../node_modules/@capacitor/android"
+  }
+}

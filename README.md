@@ -16,19 +16,19 @@ Learn more about [Nx generators on the docs](https://nx.dev/plugin-features/use-
 
 To execute tasks with Nx use the following syntax:
 
-```
+```bash
 nx <target> <project> <...options>
 ```
 
 You can also run multiple targets:
 
-```
+```bash
 nx run-many -t <target1> <target2>
 ```
 
 ..or add `-p` to filter specific projects
 
-```
+```bash
 nx run-many -t <target1> <target2> -p <proj1> <proj2>
 ```
 
@@ -42,7 +42,7 @@ Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provid
 
 Just run `nx build demoapp` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
 
-## Set up CI!
+## Set up CI
 
 Nx comes with local caching already built-in (check your `nx.json`). On CI you might want to go a step further.
 
@@ -57,7 +57,7 @@ It will show tasks that you can run with Nx.
 
 - [Learn more about Exploring the Project Graph](https://nx.dev/core-features/explore-graph)
 
-## Connect with us!
+## Connect with us
 
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)

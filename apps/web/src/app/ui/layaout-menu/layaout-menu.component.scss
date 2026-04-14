@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.fixed {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.full {
+  max-width: 100%;
+}
+
+.safe-area {
+  margin-top: constant(safe-area-inset-top);
+  margin-top: env(safe-area-inset-top);
+}
+ion-split-pane {
+  --side-width: 100px;
+  --side-max-width: 150px;
+}
+
+.fondo {
+  background: var(--ion-color-primary) !important;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "app-config",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/app-config/src",
+  "prefix": "iamanderson",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/app-config/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/app-config/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/app-config/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/app-config/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
