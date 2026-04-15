@@ -1,11 +1,11 @@
 {
   "name": "@iamanderson/shared-providers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^17.1.0",
     "@angular/core": "^17.1.0",
     "@angular/platform-browser": "~17.1.0",
-    "@iamanderson/app-config": "^0.0.1",
+    "@iamanderson/app-config": "^0.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "@ngx-translate/core": "^15.0.0",
     "rxjs": "~7.8.0"

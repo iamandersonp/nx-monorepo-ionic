@@ -1,6 +1,6 @@
 {
-  "libs/app-config": "0.0.0",
-  "libs/shared-providers": "0.0.0",
-  "libs/shared-ui": "0.0.0",
-  "apps/web": "0.0.0"
+  "libs/app-config": "0.0.1",
+  "libs/shared-providers": "0.0.1",
+  "libs/shared-ui": "0.0.1",
+  "apps/web": "0.0.1"
 }
