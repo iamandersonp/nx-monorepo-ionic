@@ -3,26 +3,30 @@
     "libs/app-config": {
       "release-type": "node",
       "package-name": "@iamandersonp/app-config",
-      "initial-version": "0.0.0",
-      "changelog-path": "CHANGELOG.md"
+      "initial-version": "0.0.1",
+      "changelog-path": "CHANGELOG.md",
+      "component": "app-config"
     },
     "libs/shared-providers": {
       "release-type": "node",
       "package-name": "@iamandersonp/shared-providers",
-      "initial-version": "0.0.0",
-      "changelog-path": "CHANGELOG.md"
+      "initial-version": "0.0.1",
+      "changelog-path": "CHANGELOG.md",
+      "component": "shared-providers"
     },
     "libs/shared-ui": {
       "release-type": "node",
       "package-name": "@iamandersonp/shared-ui",
-      "initial-version": "0.0.0",
-      "changelog-path": "CHANGELOG.md"
+      "initial-version": "0.0.1",
+      "changelog-path": "CHANGELOG.md",
+      "component": "shared-ui"
     },
     "apps/web": {
       "release-type": "node",
       "package-name": "web",
-      "initial-version": "0.0.0",
-      "changelog-path": "CHANGELOG.md"
+      "initial-version": "0.0.1",
+      "changelog-path": "CHANGELOG.md",
+      "component": "web"
     }
   },
   "plugins": [
